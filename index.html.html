@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Плеер Limp Bizkit</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        button {
+            width: 300px; /* Ширина кнопки */
+            height: 100px; /* Высота кнопки */
+            font-size: 24px; /* Размер шрифта */
+            background-color: #ff0000; /* Цвет кнопки */
+            color: white; /* Цвет текста */
+            border: none; /* Убираем рамку */
+            border-radius: 10px; /* Закругленные углы */
+            cursor: pointer; /* Указатель при наведении */
+        }
+        button:hover {
+            background-color: #cc0000; /* Цвет кнопки при наведении */
+        }
+    </style>
+</head>
+<body>
+    <h1>Плеер Limp Bizkit</h1>
+    <button id="playButton">Слушать "Rollin'"</button>
+    <audio id="audio" src="Limp Bizkit - Rollin' (Air Raid Vehicle).mp3"></audio>
+    
+    <script>
+        const button = document.getElementById('playButton');
+        const audio = document.getElementById('audio');
+
+        button.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                button.textContent = "Пауза"; // Меняем текст кнопки на "Пауза"
+            } else {
+                audio.pause();
+                button.textContent = "Слушать 'Rollin'"; // Меняем текст кнопки обратно
+            }
+        });
+    </script>
+</body>
+</html>
